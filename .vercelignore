@@ -1,0 +1,14 @@
+node_modules
+dist
+.env
+.env.local
+.env.*.local
+.DS_Store
+.git
+.github
+.claude
+tasks
+*.log
+README.md
+CONTRIBUTING.md
+SECURITY.md
