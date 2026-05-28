@@ -18,7 +18,7 @@ export function Footer({ onOpenInfo }: Props) {
           >
             이 서비스 안내
           </button>
-          <span>© 2026 한국 선거 안내</span>
+          <span>© 2026 한국 지방선거 안내</span>
         </div>
       </div>
     </footer>

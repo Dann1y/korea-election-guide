@@ -111,12 +111,25 @@ function SidebarContent({ dday }: { dday: number }) {
   return (
     <>
       <div className="flex items-center gap-2 px-2 mb-8">
-        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-violet via-fuchsia-500 to-accent-cyan grid place-items-center font-bold text-white shadow-glow">
-          선
+        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-violet via-fuchsia-500 to-accent-cyan grid place-items-center shadow-glow">
+          <svg
+            viewBox="0 0 64 64"
+            className="w-5 h-5"
+            aria-hidden="true"
+          >
+            <path
+              d="M17 33 L28 44 L48 22"
+              stroke="#ffffff"
+              strokeWidth="7"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              fill="none"
+            />
+          </svg>
         </div>
         <div>
           <div className="font-semibold text-sm tracking-tight">
-            한국 선거 안내
+            한국 지방선거 안내
           </div>
           <div className="text-[10px] text-ink-300 -mt-0.5">
             제9회 전국동시지방선거

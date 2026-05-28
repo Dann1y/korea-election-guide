@@ -8,5 +8,6 @@
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="14" fill="url(#bg)"/>
-  <text x="32" y="46" font-family="Pretendard, -apple-system, system-ui, 'Apple SD Gothic Neo', sans-serif" font-size="38" font-weight="800" text-anchor="middle" fill="#ffffff">선</text>
+  <!-- 투표 체크 마크 -->
+  <path d="M17 33 L28 44 L48 22" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 </svg>
