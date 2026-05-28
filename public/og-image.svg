@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#08080c"/>
+      <stop offset="100%" stop-color="#14141d"/>
+    </linearGradient>
+    <radialGradient id="violetGlow" cx="50%" cy="0%" r="60%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cyanGlow" cx="100%" cy="100%" r="60%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="textGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e879f9"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="logoBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="50%" stop-color="#e879f9"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#violetGlow)"/>
+  <rect width="1200" height="630" fill="url(#cyanGlow)"/>
+
+  <!-- 로고 박스 -->
+  <g transform="translate(80, 80)">
+    <rect width="80" height="80" rx="18" fill="url(#logoBg)"/>
+    <text x="40" y="58" font-family="Pretendard, system-ui, sans-serif" font-size="48" font-weight="800" text-anchor="middle" fill="#ffffff">선</text>
+  </g>
+  <text x="180" y="115" font-family="Pretendard, system-ui, sans-serif" font-size="22" font-weight="600" fill="#bdbdd2">한국 선거 안내</text>
+  <text x="180" y="148" font-family="Pretendard, system-ui, sans-serif" font-size="16" fill="#8b8ba8">중앙선거관리위원회 공공데이터 기반</text>
+
+  <!-- 메인 카피 -->
+  <text x="80" y="320" font-family="Pretendard, system-ui, sans-serif" font-size="78" font-weight="800" fill="#ffffff">내 선거구의 모든 후보를</text>
+  <text x="80" y="410" font-family="Pretendard, system-ui, sans-serif" font-size="78" font-weight="800" fill="url(#textGradient)">한 페이지에서</text>
+
+  <!-- 부제 -->
+  <text x="80" y="495" font-family="Pretendard, system-ui, sans-serif" font-size="24" fill="#bdbdd2">광역·기초 단체장 · 광역·기초의원 · 교육감 통합</text>
+
+  <!-- D-day 배지 -->
+  <g transform="translate(80, 540)">
+    <rect width="320" height="46" rx="23" fill="rgba(34, 211, 238, 0.12)" stroke="rgba(34, 211, 238, 0.4)" stroke-width="1"/>
+    <circle cx="26" cy="23" r="4" fill="#22d3ee"/>
+    <text x="44" y="30" font-family="Pretendard, system-ui, sans-serif" font-size="18" font-weight="600" fill="#22d3ee">제9회 전국동시지방선거 · 2026.6.3</text>
+  </g>
+</svg>

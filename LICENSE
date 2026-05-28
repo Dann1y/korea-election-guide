@@ -1,0 +1,34 @@
+MIT License
+
+Copyright (c) 2026 한국 선거 안내 contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## 데이터 라이선스 (Data Notice)
+
+본 소프트웨어는 중앙선거관리위원회 공공데이터포털(data.go.kr) OpenAPI를
+런타임에 호출하여 후보자·공약·당선자 정보를 표시합니다.
+
+- 표시되는 모든 후보자·공약 데이터의 저작권은 중앙선거관리위원회에 있으며,
+  공공데이터포털 이용약관(공공누리 제1유형 등)을 따릅니다.
+- 본 프로젝트는 데이터를 가공·재배포하지 않으며, 사용자 브라우저에서
+  직접 API를 호출해 표시하는 정보 제공 도구입니다.
+- 본 프로젝트는 중앙선거관리위원회의 공식 사이트가 아닙니다.
