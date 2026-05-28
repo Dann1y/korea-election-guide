@@ -85,19 +85,43 @@ const TABS: Tab[] = [
 ];
 
 export function MyDistrictPage() {
+  // ─────────────────────────────────────────────
+  // Rules of Hooks: 모든 hook을 early return 전에 호출.
+  // ─────────────────────────────────────────────
   const { district, set, clear } = useMyDistrict();
   const [modalOpen, setModalOpen] = useState(false);
   const [tabKey, setTabKey] = useState<string>("metro");
 
+  const region = district ? getRegion(district.regionCode) : undefined;
+  const sdName = region?.necSdName;
+  const noBasic = district
+    ? NO_BASIC_REGIONS.has(district.regionCode)
+    : false;
+  const dday = daysUntil("2026-06-03");
+
+  const visibleTabs = useMemo(
+    () => TABS.filter((t) => !(noBasic && t.excludeIfNoBasic)),
+    [noBasic],
+  );
+  const tab = useMemo(
+    () => visibleTabs.find((t) => t.key === tabKey) ?? visibleTabs[0],
+    [visibleTabs, tabKey],
+  );
+
+  const sectionLabel = useMemo(() => {
+    if (!tab) return "";
+    const base = `${tab.label} (${tab.subtitle})`;
+    if (tab.matchMode === "none") return base;
+    if (!district?.wiwName) return base;
+    return `${base} · ${district.wiwName}`;
+  }, [tab, district?.wiwName]);
+
+  // ─────────────────────────────────────────────
+  // Early returns (모든 hook 호출 이후)
+  // ─────────────────────────────────────────────
   if (!district) {
     return <SetupHero onConfirm={set} />;
   }
-
-  const region = getRegion(district.regionCode);
-  const sdName = region?.necSdName;
-  const noBasic = NO_BASIC_REGIONS.has(district.regionCode);
-  const dday = daysUntil("2026-06-03");
-
   if (!sdName) {
     return (
       <div className="max-w-2xl mx-auto">
@@ -111,17 +135,6 @@ export function MyDistrictPage() {
       </div>
     );
   }
-
-  const visibleTabs = TABS.filter((t) => !(noBasic && t.excludeIfNoBasic));
-  const tab = visibleTabs.find((t) => t.key === tabKey) ?? visibleTabs[0];
-
-  // 탭별 라벨 — 자치구 정보 보강
-  const sectionLabel = useMemo(() => {
-    const base = `${tab.label} (${tab.subtitle})`;
-    if (tab.matchMode === "none") return base;
-    if (!district.wiwName) return base;
-    return `${base} · ${district.wiwName}`;
-  }, [tab, district.wiwName]);
 
   return (
     <div className="space-y-4 md:space-y-5 max-w-[1200px] mx-auto">
