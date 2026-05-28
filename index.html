@@ -75,7 +75,72 @@
     </script>
   </head>
   <body class="bg-ink-950 text-ink-100 font-sans antialiased">
-    <div id="root"></div>
+    <div id="root">
+      <!-- 초기 splash: React 마운트 전 빈 화면 방지 -->
+      <div
+        style="
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 16px;
+          padding: 24px;
+          background: #08080c;
+          color: #bdbdd2;
+          font-family:
+            -apple-system,
+            BlinkMacSystemFont,
+            'Apple SD Gothic Neo',
+            system-ui,
+            sans-serif;
+        "
+      >
+        <div
+          style="
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #8b5cf6, #e879f9 50%, #22d3ee);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 24px rgba(139, 92, 246, 0.35);
+          "
+        >
+          <svg viewBox="0 0 64 64" width="28" height="28" aria-hidden="true">
+            <path
+              d="M17 33 L28 44 L48 22"
+              stroke="#ffffff"
+              stroke-width="7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              fill="none"
+            />
+          </svg>
+        </div>
+        <div style="text-align: center">
+          <div style="color: #e5e5f0; font-size: 14px; font-weight: 600; margin-bottom: 4px">
+            한국 지방선거 안내
+          </div>
+          <div style="font-size: 12px; color: #8b8ba8">불러오는 중...</div>
+        </div>
+      </div>
+    </div>
+    <noscript>
+      <div
+        style="
+          padding: 24px;
+          text-align: center;
+          color: #e5e5f0;
+          background: #08080c;
+          font-family: system-ui, sans-serif;
+        "
+      >
+        이 사이트를 보려면 자바스크립트가 필요합니다. 브라우저 설정에서
+        자바스크립트를 켜고 다시 방문해주세요.
+      </div>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

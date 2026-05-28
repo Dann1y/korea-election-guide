@@ -223,7 +223,7 @@ function SetupHero({
 }) {
   const dday = daysUntil("2026-06-03");
   return (
-    <div className="max-w-2xl mx-auto space-y-5 md:space-y-6">
+    <div className="max-w-2xl mx-auto space-y-5 md:space-y-7">
       <div className="text-center space-y-2 md:space-y-3">
         <Pill className="border-accent-cyan/40 bg-accent-cyan/10 text-accent-cyan">
           <Vote className="w-3 h-3" />
@@ -233,18 +233,56 @@ function SetupHero({
           내 <span className="text-gradient">선거구</span>를 알려주세요
         </h1>
         <p className="text-xs sm:text-sm md:text-base text-ink-300 max-w-md mx-auto leading-relaxed">
-          6·3에 받는 4~7장의 투표용지가 어떤 후보로 채워지는지, 직전 당선자는
+          6월 3일에 받는 투표용지 4~7장이 어떤 후보로 채워지는지, 직전 당선자는
           누구였는지 한 페이지에서 확인합니다.
         </p>
       </div>
+
       <Card>
         <CardBody>
           <DistrictPicker onConfirm={onConfirm} />
         </CardBody>
       </Card>
-      <p className="text-xs text-ink-400 text-center">
-        입력한 선거구는 이 기기의 localStorage에만 저장되며 외부로 전송되지
-        않습니다.
+
+      {/* 시민 안내: 왜 / 어떻게 / 개인정보 */}
+      <div className="grid sm:grid-cols-3 gap-2.5 md:gap-3">
+        <InfoCard
+          icon="📍"
+          title="어디에 쓰이나요?"
+          body="입력하신 선거구로 광역단체장·기초단체장·시·도의원·시·군·구의원·교육감 후보를 골라 보여드립니다."
+        />
+        <InfoCard
+          icon="🔒"
+          title="개인정보 보호"
+          body="선거구 정보는 이 기기 안에만 저장됩니다. 다른 곳으로 전송되거나 누가 사용했는지 기록되지 않습니다."
+        />
+        <InfoCard
+          icon="🔁"
+          title="언제든 변경"
+          body="이사 가시거나 잘못 입력했다면 상단의 '변경' 버튼을 눌러 다시 설정할 수 있습니다."
+        />
+      </div>
+    </div>
+  );
+}
+
+function InfoCard({
+  icon,
+  title,
+  body,
+}: {
+  icon: string;
+  title: string;
+  body: string;
+}) {
+  return (
+    <div className="rounded-xl border border-white/5 bg-white/[0.02] p-3 md:p-4">
+      <div className="text-lg mb-1.5">{icon}</div>
+      <div className="text-xs md:text-sm font-semibold text-ink-100 mb-1">
+        {title}
+      </div>
+      <p className="text-[11px] md:text-xs text-ink-300 leading-relaxed">
+        {body}
       </p>
     </div>
   );
